@@ -16,3 +16,5 @@ The file structure of our project :
 - Please note that if you want to execute the code yourself the Path variables leading to data location should be change to match the data location on your machine.
 
 - Due to special usage (extending the work,  of the question *``Are the tasks that request the more resources the one that consume the more resources?``*), we separated the solution into scripts because of kernal crushes if we run them in jupyter notebook cells.
+
+This Project was done by KROUDIR Amir and Kseniya Shevchuk
