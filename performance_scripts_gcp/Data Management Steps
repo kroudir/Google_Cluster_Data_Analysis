@@ -1,0 +1,29 @@
+Create data proc cluster
+
+gcloud beta dataproc clusters create dm-spark-cluster --region us-central1 \
+    --zone us-central1-f \
+    --master-machine-type n1-standard-4 \
+    --master-boot-disk-size 500 \
+    --num-workers 2 \
+    --worker-machine-type n1-standard-4 \
+    --worker-boot-disk-size 500 \
+    --image-version 1.5-debian10 \
+    --optional-components ANACONDA,JUPYTER,ZOOKEEPER \
+    --project data-management-project-301613 \
+    --enable-component-gateway 
+
+gsutil cp -R gs://clusterdata-2011-2/ gs://dm-project-data/
+
+
+gcloud compute ssh dm-spark-cluster-m \
+  --project=data-management-project-301613 \
+  --zone=us-central1-f -- -D 1080 -N
+
+
+https://cloud.google.com/dataproc/docs/concepts/dataproc-hdfs
+
+
+Run on full data 4003.275267351999
+
+The poucentage of tasks that ask for resources needed is 27.279567506433438
+[11.911883004000629, 0.16344163799840317, 0.041490408999379724, 0.01711750400136225, 0.18443590300012147, 4003.275267351999]
